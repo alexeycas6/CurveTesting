@@ -83,5 +83,7 @@ int main() {
     for (int i = 0; i < circles.size(); i++)
         sum += circles[i]->get_radius();
 
+    std::cout << "sum radii: " << sum << std::endl;
+
     return 0;
 }
