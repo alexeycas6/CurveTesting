@@ -23,7 +23,7 @@ int main() {
 
     for (size_t i = 0; i < count; i++) {
 
-        // òèï ôèãóðû
+        // Ñ‚Ð¸Ð¿ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
         auto figure_type = figures(generator);
 
         switch (figure_type)
@@ -47,14 +47,14 @@ int main() {
             break;
         }
 
-        // êîîðäèíàòû
+        // ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ñ‹
         auto time = pi / 4.;
         auto coords = curves.back()->get_point(time);
         std::cout << "x: " << coords[0] <<
             ", y: " << coords[1] <<
             ", z: " << coords[2] << std::endl;
 
-        // ïðîèçâîäíàÿ
+        // Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´Ð½Ð°Ñ
         auto derivative = curves.back()->get_derivative(time);
         std::cout << "x_d: " << derivative[0] <<
             ", y_d: " << derivative[1] <<
@@ -62,7 +62,7 @@ int main() {
         std::cout << std::endl;
     }
 
-    // âûäåëÿåì êðóãè
+    // Ð²Ñ‹Ð´ÐµÐ»ÑÐµÐ¼ ÐºÑ€ÑƒÐ³Ð¸
     std::vector<std::shared_ptr<circle>> circles;
     for (const auto& elem : curves) {
         auto circle_elem = std::dynamic_pointer_cast<circle>(elem);
