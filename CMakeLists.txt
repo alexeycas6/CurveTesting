@@ -9,6 +9,8 @@ if(OPENMP_FOUND)
 	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS}")
 endif(OPENMP_FOUND)
 
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+
 # стандарт языка
 set(CMAKE_CXX_STANDARD 14)
 
@@ -27,13 +29,11 @@ set(SOURCES_FILES ${SOURCES_DIR}/curve.h
 			      ${SOURCES_DIR}/helix.cpp				  
 )
 
-# цель консольная версия
-add_executable(curves_console ${SOURCES_FILES} ${SOURCES_DIR}/main.cpp)
-target_compile_definitions(curves_console PRIVATE)
-
 # цель dll
 add_library(curves SHARED ${SOURCES_FILES})
-target_compile_definitions(curves PRIVATE)
+
+# цель консольная версия
+add_executable(curves_console ${SOURCES_DIR}/main.cpp)
 
 # параллельная компиляция
 if (MSVC)
@@ -42,4 +42,4 @@ if (MSVC)
 endif()
 
 # линковка библиотек
-#target_link_libraries(test PRIVATE curve)
+target_link_libraries(curves_console PRIVATE curves)
