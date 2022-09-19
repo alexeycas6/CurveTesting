@@ -1,7 +1,9 @@
 ﻿#pragma once
 #include <array>
 
-class curve {
+#include "config.h"
+
+class CURVE_API curve {
 
     using point = std::array<double, 3>;
 

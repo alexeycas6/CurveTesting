@@ -2,7 +2,7 @@
 
 #include "ellipse.h"
 
-class helix : public ellipse {
+class CURVE_API helix : public ellipse {
     double m_step;
 
     // достаточно только переопределить методы для z

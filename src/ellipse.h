@@ -5,7 +5,7 @@
 
 #include "curve.h"
 
-class ellipse : public curve {
+class CURVE_API ellipse : public curve {
 protected:
 
     /* полуось x */

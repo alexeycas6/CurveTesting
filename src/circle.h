@@ -2,7 +2,7 @@
 
 #include "ellipse.h"
 
-class circle : public ellipse {
+class CURVE_API circle : public ellipse {
 
 public:
     circle(double radius);
