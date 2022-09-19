@@ -80,7 +80,7 @@ int main() {
 
     double sum = 0.0;
 #pragma omp parallel for reduction(+:sum)
-    for (size_t i = 0; i < circles.size(); i++)
+    for (int i = 0; i < circles.size(); i++)
         sum += circles[i]->get_radius();
 
     return 0;
